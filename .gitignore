@@ -1,0 +1,57 @@
+# Build e binários
+bin/
+obj/
+Debug/
+Release/
+publish/
+artifacts/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.sln.docstates
+
+# Configurações locais
+appsettings.Development.json
+launchSettings.json
+.env
+*.local.json
+
+# Logs e temporários
+*.log
+*.tmp
+*.bak
+*.swp
+*.orig
+
+# Testes
+TestResult*/
+*.trx
+*.coverage
+*.coveragexml
+
+# Banco de dados local
+*.mdf
+*.ldf
+*.sqlite
+*.db
+
+# Docker
+*.pid
+*.seed
+data/
+docker-compose.override.yml
+
+# IDEs e ferramentas
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Ferramentas de análise
+*.ncrunch*
+_NCrunch_*/
+*.dotCover
+StyleCopReport.xml
+.sonarqube/
