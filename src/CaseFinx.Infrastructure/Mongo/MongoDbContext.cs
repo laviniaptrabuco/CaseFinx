@@ -1,4 +1,5 @@
 ﻿using CaseFinx.Domain.Entities;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using Microsoft.Extensions.Configuration;
 
@@ -12,6 +13,8 @@ namespace CaseFinx.Infrastructure.Mongo
         {
             var connectionString = config["Mongo:ConnectionString"];
             var databaseName = config["Mongo:Database"];
+
+            var settings = MongoClientSettings.FromConnectionString(connectionString);
 
             var client = new MongoClient(connectionString);
             _database = client.GetDatabase(databaseName);
