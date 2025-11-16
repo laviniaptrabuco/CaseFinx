@@ -1,5 +1,6 @@
 ﻿using CaseFinx.Application.Services;
 using CaseFinx.Domain.Entities;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace CaseFinx.Api.Controllers

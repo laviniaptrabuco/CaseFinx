@@ -1,7 +1,7 @@
 ﻿using CaseFinx.Domain.Entities;
-using MongoDB.Bson;
-using MongoDB.Driver;
 using Microsoft.Extensions.Configuration;
+
+using MongoDB.Driver;
 
 namespace CaseFinx.Infrastructure.Mongo
 {

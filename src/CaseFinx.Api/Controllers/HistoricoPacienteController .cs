@@ -1,5 +1,6 @@
 ﻿using CaseFinx.Application.Services;
 using CaseFinx.Domain.Entities;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace CaseFinx.Api.Controllers
@@ -16,7 +17,7 @@ namespace CaseFinx.Api.Controllers
         }
 
         [HttpGet("paciente/{pacienteId}")]
-        public async Task<IActionResult> GetByPaciente(string pacienteId) => 
+        public async Task<IActionResult> GetByPaciente(string pacienteId) =>
             Ok(await _service.ListarPorPaciente(pacienteId));
 
         [HttpPost]

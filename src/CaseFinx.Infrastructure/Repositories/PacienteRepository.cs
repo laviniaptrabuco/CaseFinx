@@ -1,6 +1,7 @@
 ﻿using CaseFinx.Domain.Entities;
 using CaseFinx.Domain.Interfaces;
 using CaseFinx.Infrastructure.Mongo;
+
 using MongoDB.Driver;
 
 namespace CaseFinx.Infrastructure.Repositories
