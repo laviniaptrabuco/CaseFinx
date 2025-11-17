@@ -6,7 +6,7 @@ namespace CaseFinx.Domain.Interfaces
 {
     public interface IPacienteRepository
     {
-        Task<Paciente> GetById(Guid id);
+        Task<Paciente> GetById(string cpf);
         Task<List<Paciente>> GetAll();
         Task Create(Paciente paciente);
         Task Update(Paciente paciente);

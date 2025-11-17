@@ -23,8 +23,20 @@ namespace CaseFinx.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] HistoricoPaciente h)
         {
+            h.Id = Guid.NewGuid();
+
             await _service.Adicionar(h);
-            return CreatedAtAction(nameof(GetByPaciente), new { pacienteId = h.PacienteId }, h);
+
+            var retorno = new
+            {
+                h.PacienteId,
+                h.Diagnosticos,
+                h.ExamesRealizados,
+                h.Prescricoes,
+                h.DataRegistro
+            };
+
+            return CreatedAtAction(nameof(GetByPaciente), new { pacienteId = h.PacienteId }, retorno);
         }
 
     }

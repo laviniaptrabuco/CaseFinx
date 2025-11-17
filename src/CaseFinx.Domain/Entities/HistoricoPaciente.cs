@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.Text.Json.Serialization;
 
 namespace CaseFinx.Domain.Entities
 {
@@ -7,21 +8,12 @@ namespace CaseFinx.Domain.Entities
     {
         [BsonId]
         [BsonRepresentation(BsonType.String)]
+        [JsonIgnore]
         public Guid Id { get; set; }
         public string PacienteId { get; set; }
         public string Diagnosticos { get; set; }
         public string ExamesRealizados { get; set; }
         public string Prescricoes { get; set; }
         public DateTime DataRegistro { get; set; }
-
-        public HistoricoPaciente(string pacienteId, string diagnosticos, string examesRealizados, string prescricoes, DateTime dataRegistro)
-        {
-            Id = Guid.NewGuid();
-            PacienteId = pacienteId;
-            Diagnosticos = diagnosticos;
-            ExamesRealizados = examesRealizados;
-            Prescricoes = prescricoes;
-            DataRegistro = dataRegistro;
-        }
     }
 }

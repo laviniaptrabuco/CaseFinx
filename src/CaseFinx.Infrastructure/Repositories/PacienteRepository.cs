@@ -15,8 +15,8 @@ namespace CaseFinx.Infrastructure.Repositories
             _collection = context.Pacientes;
         }
 
-        public Task<Paciente> GetById(Guid id) =>
-            _collection.Find(p => p.Id == id).FirstOrDefaultAsync();
+        public Task<Paciente> GetById(string cpf) =>
+            _collection.Find(p => p.CPF == cpf).FirstOrDefaultAsync();
 
         public Task<List<Paciente>> GetAll() =>
             _collection.Find(_ => true).ToListAsync();

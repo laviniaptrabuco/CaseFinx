@@ -19,10 +19,10 @@ namespace CaseFinx.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Get() => Ok(await _service.Listar());
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(Guid id)
+        [HttpGet("{cpf}")]
+        public async Task<IActionResult> GetById(string cpf)
         {
-            var paciente = await _service.Buscar(id);
+            var paciente = await _service.Buscar(cpf);
             if (paciente == null) return NotFound();
             return Ok(paciente);
         }
@@ -30,8 +30,19 @@ namespace CaseFinx.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Paciente p)
         {
+            p.Id = Guid.NewGuid();
+
             await _service.Adicionar(p);
-            return CreatedAtAction(nameof(Get), new { id = p.Id }, p);
+
+            var retorno = new
+            {
+                p.Nome,
+                p.CPF,
+                p.DataNascimento,
+                p.Contato
+            };
+
+            return CreatedAtAction(nameof(GetById), new { id = p.Id }, retorno);
         }
 
         [HttpPut("{id}")]
