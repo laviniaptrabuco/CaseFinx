@@ -38,6 +38,5 @@ namespace CaseFinx.Api.Controllers
 
             return CreatedAtAction(nameof(GetByPaciente), new { pacienteId = h.PacienteId }, retorno);
         }
-
     }
 }

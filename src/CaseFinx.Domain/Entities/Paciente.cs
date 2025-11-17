@@ -10,9 +10,9 @@ namespace CaseFinx.Domain.Entities
         [BsonRepresentation(BsonType.String)]
         [JsonIgnore] 
         public Guid Id { get; set; } 
-        public string Nome { get; set; } 
-        public string CPF { get; set; }
-        public DateTime DataNascimento { get; set; }
+        public required string Nome { get; set; } 
+        public required string CPF { get; set; }
+        public required DateTime DataNascimento { get; set; }
         public string? Contato { get; set; }
     }
 }

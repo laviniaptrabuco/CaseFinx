@@ -10,10 +10,10 @@ namespace CaseFinx.Domain.Entities
         [BsonRepresentation(BsonType.String)]
         [JsonIgnore]
         public Guid Id { get; set; }
-        public string PacienteId { get; set; }
-        public string Diagnosticos { get; set; }
-        public string ExamesRealizados { get; set; }
-        public string Prescricoes { get; set; }
-        public DateTime DataRegistro { get; set; }
+        public required string PacienteId { get; set; }
+        public required string Diagnosticos { get; set; }
+        public required string ExamesRealizados { get; set; }
+        public required string Prescricoes { get; set; }
+        public required DateTime DataRegistro { get; set; }
     }
 }

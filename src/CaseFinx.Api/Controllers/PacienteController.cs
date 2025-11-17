@@ -20,7 +20,7 @@ namespace CaseFinx.Api.Controllers
         public async Task<IActionResult> Get() => Ok(await _service.Listar());
 
         [HttpGet("{cpf}")]
-        public async Task<IActionResult> GetById(string cpf)
+        public async Task<IActionResult> GetByCPF(string cpf)
         {
             var paciente = await _service.Buscar(cpf);
             if (paciente == null) return NotFound();
@@ -42,7 +42,7 @@ namespace CaseFinx.Api.Controllers
                 p.Contato
             };
 
-            return CreatedAtAction(nameof(GetById), new { id = p.Id }, retorno);
+            return CreatedAtAction(nameof(GetByCPF), new { id = p.Id }, retorno);
         }
 
         [HttpPut("{id}")]

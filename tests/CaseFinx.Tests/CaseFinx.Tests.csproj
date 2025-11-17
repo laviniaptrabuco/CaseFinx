@@ -18,6 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\CaseFinx.Api\CaseFinx.Api.csproj" />
+    <ProjectReference Include="..\..\src\CaseFinx.Infrastructure\CaseFinx.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
 
