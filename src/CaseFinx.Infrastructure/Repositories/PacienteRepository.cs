@@ -25,7 +25,7 @@ namespace CaseFinx.Infrastructure.Repositories
             _collection.InsertOneAsync(paciente);
 
         public Task Update(Paciente paciente) =>
-            _collection.ReplaceOneAsync(p => p.Id == paciente.Id, paciente);
+            _collection.ReplaceOneAsync(p => p.CPF == paciente.CPF, paciente);
 
         public Task Delete(Guid id) =>
             _collection.DeleteOneAsync(p => p.Id == id);

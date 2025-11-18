@@ -45,10 +45,10 @@ namespace CaseFinx.Api.Controllers
             return CreatedAtAction(nameof(GetByCPF), new { id = p.Id }, retorno);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{cpf}")]
         public async Task<IActionResult> Put(Guid id, [FromBody] Paciente p)
         {
-            p.Id = id;
+            p.CPF = cpf;
             await _service.Atualizar(p);
             return NoContent();
         }
